@@ -1,0 +1,8 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=afe81a9d_002D0b04_002D403c_002Db808_002Dba0a26e96ea5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetCommands_ShouldHaveTwoCallTo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::EDFFDD90-D884-4238-8016-82BF5E340CA5::net8.0::ElevatorTests.ElevatorTest.ElevatorFloor_StartsAtOne&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::EDFFDD90-D884-4238-8016-82BF5E340CA5::net8.0::ElevatorTests.ElevatorOperatorTest.ExecuteCommand_ThrowsWhen_CallingToFloorWithoutCallButton&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::EDFFDD90-D884-4238-8016-82BF5E340CA5::net8.0::ElevatorTests.ElevatorTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

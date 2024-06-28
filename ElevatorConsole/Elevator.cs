@@ -1,11 +1,5 @@
 namespace ElevatorConsole;
 
-public enum ElevatorDoorState
-{
-    Open,
-    Closed,
-}
-
 public class Elevator
 {
     public static Elevator Default()
@@ -24,15 +18,45 @@ public class Elevator
     {
         Floors = floors;
         CurrentFloor = floors[0];
-        DoorState = ElevatorDoorState.Closed;
+        History.Add(CurrentFloor);
+        DoorsOpen = true;
     }
     
     public List<Floor> Floors { get; set; }
 
-    public Floor CurrentFloor { get; set; }
-    
-    public ElevatorDoorState DoorState { get; set; }
+    public List<Floor> History { get; set; } = new List<Floor>();
 
+    public Floor CurrentFloor { get; set; }
+    public bool DoorsOpen { get; set; }
+
+    public void MoveTo(Floor floor)
+    {
+        if (floor != CurrentFloor)
+        {
+            CloseDoors();
+        
+            CurrentFloor = floor;
+            History.Add(CurrentFloor);
+        }
+
+        OpenDoors();
+    }
+
+    public void CloseDoors()
+    {
+        if (DoorsOpen)
+        {
+            DoorsOpen = false;
+        }
+    }
+
+    public void OpenDoors()
+    {
+        if (!DoorsOpen)
+        {
+            DoorsOpen = true;
+        }
+    }
 }
 
 public class Floor
