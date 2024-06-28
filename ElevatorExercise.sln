@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevatorConsole", "ElevatorConsole\ElevatorConsole.csproj", "{5B8CDE5E-F6A0-4C69-95CF-22598F98B71B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevatorTests", "ElevatorTests\ElevatorTests.csproj", "{EDFFDD90-D884-4238-8016-82BF5E340CA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevatorWeb", "ElevatorWeb\ElevatorWeb.csproj", "{5603A9FD-FA11-4015-9A21-CCDECE870201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevatorLib", "ElevatorLib\ElevatorLib.csproj", "{9EA21B8B-B6BC-4F34-B8F8-FCA045132249}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,10 +12,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5B8CDE5E-F6A0-4C69-95CF-22598F98B71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B8CDE5E-F6A0-4C69-95CF-22598F98B71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B8CDE5E-F6A0-4C69-95CF-22598F98B71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B8CDE5E-F6A0-4C69-95CF-22598F98B71B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EDFFDD90-D884-4238-8016-82BF5E340CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EDFFDD90-D884-4238-8016-82BF5E340CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDFFDD90-D884-4238-8016-82BF5E340CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -24,5 +20,9 @@ Global
 		{5603A9FD-FA11-4015-9A21-CCDECE870201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5603A9FD-FA11-4015-9A21-CCDECE870201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5603A9FD-FA11-4015-9A21-CCDECE870201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA21B8B-B6BC-4F34-B8F8-FCA045132249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA21B8B-B6BC-4F34-B8F8-FCA045132249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA21B8B-B6BC-4F34-B8F8-FCA045132249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA21B8B-B6BC-4F34-B8F8-FCA045132249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

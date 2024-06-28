@@ -1,4 +1,4 @@
-using ElevatorConsole;
+using ElevatorLib;
 using FluentAssertions;
 
 namespace ElevatorTests;

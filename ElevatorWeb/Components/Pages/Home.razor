@@ -1,42 +1,62 @@
 ﻿@page "/"
-@using ElevatorConsole
+@using ElevatorLib
 @inject ElevatorOperator Operator
+@rendermode InteractiveServer
 
 <PageTitle>Elevator</PageTitle>
 
-<div class="floor-list">
-    @foreach (var floor in Operator.Elevator.Floors)
-    {
-        <div class="floor">
-            <span>@floor.FloorNumber</span>
-            <div class="floor-buttons">
-                @if (floor.HasUpButton)
+<div class="container">
+    <span>Current Floor: @Operator.Elevator.CurrentFloor.FloorNumber</span>
+    <div class="controls">
+        <div class="card floor-list">
+            @foreach (var floor in Operator.Elevator.Floors)
+            {
+                <div class="floor">
+                    <span>@floor.FloorNumber</span>
+                    <div class="floor-buttons">
+                        @if (floor.HasDownButton)
+                        {
+                            <button @onclick="() => Operator.GoingDown(floor)">
+                                @if (!floor.HasDownButton)
+                                {
+                                    @: Call
+                                }
+                                else
+                                {
+                                    @: Down
+                                }
+                            </button>
+                        }
+                        @if (floor.HasUpButton)
+                        {
+                            <button @onclick="() => Operator.GoingUp(floor)">
+                                @if (!floor.HasUpButton)
+                                {
+                                    @: Call
+                                }
+                                else
+                                {
+                                    @: Up
+                                }
+                            </button>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+        
+        <div class="card select-floor">
+            @if (Operator.Elevator.Direction != Direction.Stationary)
+            {
+                <span>Going @Operator.Elevator.Direction</span>
+            }
+            <span>Select Floor:</span>
+            <div class="floor-list">
+                @foreach (var floor in Operator.FloorOptions)
                 {
-                    <button @onclick="() => Operator.GoingDown(floor)">
-                        @if (!floor.HasDownButton)
-                        {
-                            @: Call
-                        }
-                        else
-                        {
-                            @: Down
-                        }
-                    </button>    
+                    <button @onclick="() => Operator.SelectFloor(floor)">Floor #@floor.FloorNumber</button>
                 }
-                @if (floor.HasDownButton)
-                {
-                    <button @onclick="() => Operator.GoingUp(floor)">
-                        @if (!floor.HasUpButton)
-                        {
-                            @: Call
-                        }
-                        else
-                        {
-                            @: Up
-                        }
-                    </button>    
-                }
-            </div>   
-        </div>   
-    }    
+            </div>
+        </div>
+    </div>
 </div>

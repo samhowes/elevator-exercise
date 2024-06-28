@@ -1,4 +1,4 @@
-namespace ElevatorConsole;
+namespace ElevatorLib;
 
 public class Floor
 {

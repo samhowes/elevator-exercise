@@ -1,3 +1,7 @@
+body {
+    background: #eee;
+}
+
 .page {
     position: relative;
     display: flex;

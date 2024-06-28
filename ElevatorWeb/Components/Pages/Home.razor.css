@@ -1,0 +1,51 @@
+button {
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: .2rem;
+    background: white;
+}
+
+button:active {
+    background: #eee;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card {
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 4px;
+    padding: 1rem;
+    background: #fff;
+}
+
+.floor-list {
+    min-width: 10rem;
+    
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.floor-list .floor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.floor-buttons {
+    display: flex;
+    gap: .25rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+

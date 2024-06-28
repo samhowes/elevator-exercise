@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ElevatorConsole\ElevatorConsole.csproj" />
+      <ProjectReference Include="..\ElevatorLib\ElevatorLib.csproj" />
     </ItemGroup>
 
 </Project>
