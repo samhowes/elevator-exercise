@@ -17,7 +17,7 @@
                         @if (floor.HasDownButton)
                         {
                             <button @onclick="() => Operator.GoingDown(floor)">
-                                @if (!floor.HasDownButton)
+                                @if (!floor.HasUpButton)
                                 {
                                     @: Call
                                 }
@@ -30,7 +30,7 @@
                         @if (floor.HasUpButton)
                         {
                             <button @onclick="() => Operator.GoingUp(floor)">
-                                @if (!floor.HasUpButton)
+                                @if (!floor.HasDownButton)
                                 {
                                     @: Call
                                 }
