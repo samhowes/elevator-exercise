@@ -21,7 +21,7 @@ internal static class Program
         
             var command = AnsiConsole.Prompt(
                 new SelectionPrompt<ElevatorCommand>()
-                    .Title("Choose a command:")
+                    .Title("Choose a button:")
                     .AddChoices(commands)
             );
 

@@ -27,6 +27,7 @@ public class Elevator
     public List<Floor> History { get; set; } = new List<Floor>();
 
     public Floor CurrentFloor { get; set; }
+    
     public bool DoorsOpen { get; set; }
 
     public void MoveTo(Floor floor)
@@ -56,17 +57,5 @@ public class Elevator
         {
             DoorsOpen = true;
         }
-    }
-}
-
-public class Floor
-{
-    public int FloorNumber { get; }
-    public bool HasCallButton { get; }
-
-    public Floor(int floorNumber, bool hasCallButton)
-    {
-        FloorNumber = floorNumber;
-        HasCallButton = hasCallButton;
     }
 }

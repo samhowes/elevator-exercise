@@ -15,7 +15,7 @@ public class ElevatorTest
     }
 
     [Fact]
-    public void ElevatorFloor_StartsAtOneWithDoorOpen()
+    public void ElevatorFloor_StartsAtOne_WithDoorOpen()
     {
         _elevator.CurrentFloor.FloorNumber.Should().Be(1);
         _elevator.DoorsOpen.Should().Be(true);
