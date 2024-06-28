@@ -1,16 +1,23 @@
 namespace ElevatorConsole;
 
+public enum Direction
+{
+    Stationary,
+    Up,
+    Down,
+}
+
 public class Elevator
 {
     public static Elevator Default()
     {
         return new Elevator(new List<Floor>()
         {
-            new Floor(1, true),
-            new Floor(2, false),
-            new Floor(3, false),
-            new Floor(4, false),
-            new Floor(5, true),
+            new Floor(1, false, true),
+            new Floor(2, true, true),
+            new Floor(3, true, true),
+            new Floor(4, true, true),
+            new Floor(5, true, false),
         });
     }
     
@@ -29,6 +36,8 @@ public class Elevator
     public Floor CurrentFloor { get; set; }
     
     public bool DoorsOpen { get; set; }
+    
+    public Direction Direction { get; set; } = Direction.Stationary;
 
     public void MoveTo(Floor floor)
     {

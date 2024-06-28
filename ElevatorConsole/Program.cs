@@ -17,15 +17,6 @@ internal static class Program
             AnsiConsole.WriteLine($"Ctrl-C to exit");
             AnsiConsole.WriteLine();
             
-            var commands = elevatorOperator.GetCommands();
-        
-            var command = AnsiConsole.Prompt(
-                new SelectionPrompt<ElevatorCommand>()
-                    .Title("Choose a button:")
-                    .AddChoices(commands)
-            );
-
-            elevatorOperator.ExecuteCommand(command);
         }
     }
 }

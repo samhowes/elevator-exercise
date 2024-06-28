@@ -3,11 +3,13 @@ namespace ElevatorConsole;
 public class Floor
 {
     public int FloorNumber { get; }
-    public bool HasCallButton { get; }
+    public bool HasUpButton { get; }
+    public bool HasDownButton { get; }
 
-    public Floor(int floorNumber, bool hasCallButton)
+    public Floor(int floorNumber, bool hasDownButton, bool hasUpButton)
     {
         FloorNumber = floorNumber;
-        HasCallButton = hasCallButton;
+        HasUpButton = hasUpButton;
+        HasDownButton = hasDownButton;
     }
 }

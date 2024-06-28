@@ -9,45 +9,31 @@ public class ElevatorOperator
         Elevator = elevator;
     }
 
-    public List<ElevatorCommand> GetCommands()
+    public void GoingUp(Floor floor)
     {
-        var commands = new List<ElevatorCommand>();
-        
-        // commands from outside the doors
-        foreach (var callableFloor in Elevator.Floors.Where(f => f.HasCallButton))
-        {
-            commands.Add(new ElevatorCommand(
-                callableFloor, ElevatorOperation.CallTo, $"Call to floor {callableFloor.FloorNumber}"));
-        }
-        
-        // commands from inside the elevator
-        foreach (var floor in Elevator.Floors)
-        {
-            commands.Add(new ElevatorCommand(
-                floor, ElevatorOperation.MoveTo, $"Go to floor {floor.FloorNumber}"));
-        }
-
-        return commands;
+        Elevator.Direction = Direction.Up;
+        Elevator.MoveTo(floor);
     }
 
-    public void ExecuteCommand(ElevatorCommand command)
+    public void GoingDown(Floor floor)
     {
-        switch (command.Operation)
+        Elevator.Direction = Direction.Down;
+        Elevator.MoveTo(floor);
+    }
+
+    public void SelectFloor(Floor floor)
+    {
+        Elevator.MoveTo(floor);
+    }
+    
+    public List<Floor> GetFloorOptions()
+    {
+        return Elevator.Direction switch
         {
-            case ElevatorOperation.CallTo:
-                if (!command.Floor.HasCallButton)
-                    throw new Exception(
-                        $"Can't call to floor #{command.Floor.FloorNumber} that does not have a call button");
-                
-                Elevator.MoveTo(command.Floor);
-                break;
-            
-            case ElevatorOperation.MoveTo:
-                Elevator.MoveTo(command.Floor);
-                break;
-            
-            default:
-                throw new Exception($"Unknown {nameof(ElevatorOperation)} value {command.Operation}");
-        }
+            Direction.Stationary => Elevator.Floors.Where(f => f != Elevator.CurrentFloor).ToList(),
+            Direction.Up => Elevator.Floors.Where(f => f.FloorNumber > Elevator.CurrentFloor.FloorNumber).ToList(),
+            Direction.Down => Elevator.Floors.Where(f => f.FloorNumber < Elevator.CurrentFloor.FloorNumber).ToList(),
+            _ => throw new Exception($"Invalid direction set: {Elevator.Direction}")
+        };
     }
 }
